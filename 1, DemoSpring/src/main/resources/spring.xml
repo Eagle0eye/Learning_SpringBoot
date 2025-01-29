@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="dev" class="org.joe.Dev" autowire="byName">
+<!--        <property name="age" value="2"></property>-->
+<!--            <constructor-arg index="0" value="12"/>-->
+<!--        <property name="laptop" ref="laptop"></property>-->
+        <constructor-arg index="0" ref="computer" />
+    </bean>
+    <bean id="computer" class="org.joe.Desktop" >
+    </bean>
+    <bean id="laptop" class="org.joe.Laptop" primary="true">
+    </bean>
+</beans>
